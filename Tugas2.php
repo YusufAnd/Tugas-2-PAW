@@ -10,7 +10,6 @@ try {
     die('Error: ' . $e->getMessage());
 }
 
-// 1. TAMBAH DATA (INSERT)
 if (isset($_POST['tambah'])) {
     $nim  = $_POST['nim'];
     $name = $_POST['name'];
@@ -23,7 +22,6 @@ if (isset($_POST['tambah'])) {
     exit();
 }
 
-// 2. HAPUS DATA (DELETE)
 if (isset($_GET['hapus'])) {
     $id = $_GET['hapus'];
 
@@ -35,7 +33,6 @@ if (isset($_GET['hapus'])) {
     exit();
 }
 
-// 3. EDIT DATA (UPDATE)
 $data_edit = null;
 if (isset($_GET['edit'])) {
     $id   = $_GET['edit'];
@@ -58,7 +55,6 @@ if (isset($_POST['update'])) {
     exit();
 }
 
-// 4. TAMPILKAN DATA (SELECT)
 $sql   = "SELECT * FROM mahasiswa";
 $query = $conn->query($sql);
 $rows  = $query->fetchAll(PDO::FETCH_ASSOC);
